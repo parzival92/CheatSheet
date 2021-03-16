@@ -76,7 +76,7 @@ az acr replication create --registry <container_registry_name> --location <locat
 az acr replication list --registry <container_registry_name> --output table
 ```
 
-###ACR Tasks Rebuild on source code change
+### ACR Tasks Rebuild on source code change
 ```
 az acr task create --registry <container_registry_name> --name buildwebapp --image webimage --context https://github.com/MicrosoftDocs/mslearn-deploy-run-container-app-service.git --branch master --file Dockerfile --git-access-token <access_token>
 ```
