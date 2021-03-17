@@ -32,3 +32,29 @@ az storage account show-connection-string \
   --name <name>
 
 ```
+## Azure Storage Queue
+
+* **Create Storage Account**
+
+```
+az storage account create --name [unique-name] -g [resource-group-name] --kind StorageV2 --sku Standard_LRS
+
+```
+
+* **Get Connection String**
+
+```
+az storage account show-connection-string --name <name> --resource-group [resource-group-name]
+```
+## Azure Storage Security
+
+* **Azure AD App permission**
+* **Storage keys which will provide full access to storage accounts**
+* **Shared Access Signatures ( Particular time frame access and limited access ,Good for third party services )**
+
+## Control network access to your storage account
+
+* **Manage default network access rules**
+
+
+Go to Storage Account >> Networking >> To restrict traffic from selected networks, select Selected networks. To allow traffic from all networks, select All networks.
