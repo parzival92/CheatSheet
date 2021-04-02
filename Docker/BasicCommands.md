@@ -24,5 +24,7 @@ Run Command on  Running Container
 
 ```
 docker exec <container_id> cat /etc/hosts/
-
+docker exec mysql-db mysql -p db_pass123 -e 'use foo; select * from myTable'
 ```
+
+

@@ -54,5 +54,7 @@ How will you convert version 1 to version 3
 * **Add services and version 3**
 * **No links required**
 
+docker-compose up
+
 
 
