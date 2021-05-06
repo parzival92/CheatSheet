@@ -1,46 +1,85 @@
 # Git Concepts
 
-```
-git commit -a -m "Add a heading to index.html"
-```
-The -a option adds all of the files you modified since the last commit. It won't add new files. For that, you still need git add.
 
 ```
-git diff
-git diff head
-```
-The default is for git diff to compare the working tree to the index. In other words, it shows you all of the changes that haven't been staged (added to the index) yet. To compare the working tree to the last commit, you can use git diff HEAD.
+#Git log shows list of file changed
+git log --name-only
 
-* **Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to files, not directories.**
+#Git log show last 3 commit 
+git log -n 3
+
+#Create new branch
+git branch <branchname>
+
+#Switch to Existing Branch
+git checkout <branchname>
+
+#Create new branch and switch to it
+git checkout -b <branchname>
+
+#Delete a branch
+git branch -d <branchname>
+
+#List all branches
+git branch
+
+#List local and remote branches
+git branch -a
+```
+
+### Git Merge
 
 ```
-git log --oneline
+git checkout <branchname>
+git merge <targetbranch>
+
 ```
 
-#### How to recover deleted file
+### Remote Repositories
+
+```
+git remote add origin <repo-url>
+
+git clone <sshurl>
+
+#When changes are on remote not on local
+git fetch origin master
+git merge origin master
+
+#git pull (git fetch and git merge)
+git pull origin master
+
+```
+
+### Cherry Pick
 
 
-Remove file
 ```
-rm index.html
+#Get Particular commit in your working area
+git cherry-pick 7d6f462
+
 ```
-Recover with checkout
+
+### Resetting and Reverting
+
 ```
-git checkout -- index.html
+git revert HEAD~0
+
+git reset --soft Head~3
 ```
-If we remove with git rm
+
+### Stashing
+
 ```
-git rm index.html
+
+git stash
+git stash list
+git stash pop 
+git stash show stash@{1}
+
+git reflog
 ```
-then try git checkout it will give error as it as removed index also solution is to use git reset
-```
-git reset HEAD index.html
-```
-Above is scenario where you are on working tree and nothing has committed now how to handle recovery when changes are committed
-```
-git revert --no-edit HEAD
-git checkout -- index.html
-```
-The --no-edit flag here tells Git that we don't want to add a commit message for this action.
+
+
 
 

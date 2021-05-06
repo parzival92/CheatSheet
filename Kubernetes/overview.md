@@ -46,9 +46,7 @@ kubectl get version
 kubectl get nodes -o wide
 ```
 
-Minikube - Local kubernetes
-
-microk8s
+Minikube - Single node cluster / microk8s
 
 kubeadm - production grade cluster
 
